@@ -1,0 +1,63 @@
+<view class='divider'></view>
+<view class='cell'>
+  <navigator class='cell-item arrow'>
+    <text>表单输入框</text>
+  </navigator>
+  <view class='cell-item'>
+    <input type="text" placeholder="text"></input>
+  </view>
+  <view class='cell-item'>
+    <input type="password" placeholder="password"></input>
+  </view>
+  <view class='cell-item'>
+    <input type="number" placeholder="number"></input>
+  </view>
+  <view class='cell-item'>
+    <input type="idcard" placeholder="idcard"></input>
+  </view>
+</view>
+
+<view class='cell'>
+  <navigator class='cell-item arrow'>
+    <text>其他表单组件</text>
+  </navigator>
+  <view class='cell-item'>
+    <checkbox-group>
+      <checkbox color='#cc9426' checked></checkbox>
+      <checkbox color='#cc9426'></checkbox>
+    </checkbox-group>
+  </view>
+  <view class='cell-item'>
+    <radio-group bindchange='radioChangeHandle' data-para="参数">
+      <radio color='#cc9426' checked value='male'></radio>男
+      <radio color='#cc9426' value='female'></radio>女
+      <radio color='#cc9426' disabled></radio>保密
+    </radio-group>
+  </view>
+  <view class='cell-item'>
+    <switch color='#cc9426' checked></switch>
+    <switch color='#cc9426'></switch>
+  </view>
+</view>
+
+<view class='cell'>
+  <navigator class='cell-item arrow'>
+    <text>事件绑定与事件冒泡</text>
+  </navigator>
+  <view class='cell-item' >
+      <view class="father" bindtap='fathertapHandle' style='width:200rpx; height:200rpx; background:blue;' >
+      <view class="son" catchtap='sontapHandle' style='width:100rpx; height:100rpx; background:cyan;'></view>      
+      </view>
+  </view>
+
+</view>
+
+<!-- wxs页面脚本 -->
+<wxs module="foo">
+  module.exports = {
+    sum: function(a, b) {
+      return a * b;
+    }
+  }
+</wxs>
+<view class='cell cell-item'>{{ foo.sum(1,2) }}</view>

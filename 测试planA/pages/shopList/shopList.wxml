@@ -1,0 +1,28 @@
+<view class="shop">
+  <image class="shop-img" src='/assets/images/avatar.png' lazy-load></image>
+  <view class="shop-info">
+    <text class="shop-title ell">广告商：专用广告位</text>
+    <text class="shop-tel ell">电话：xxxx-xxxxxxx</text>
+    <text class="shop-address ell">地址：某省某市某县</text>
+    <text class="shop-time ell">营业时间：24小时</text>
+  </view>
+  <view class="shop-star">
+    <view class="star-after">★★★★★</view>
+    <view class="star-before" style='width:100%'>哈哈★★★★★</view>
+  </view>
+</view>
+<view class="shop" wx:for="{{ shopList }}" wx:key="id">
+  <image class="shop-img" src='{{ item.images[0] }}' lazy-load></image>
+  <view class="shop-info">
+    <text class="shop-title ell">{{ item.name }}</text>
+    <text class="shop-tel ell">电话：{{ item.phone }}</text>
+    <text class="shop-address ell">地址：{{ item.address }}</text>
+    <text class="shop-time ell">营业时间：{{ item.time }}</text>
+  </view>
+  <view class="shop-star">
+    <view class="star-after">★★★★★</view>
+    <view class="star-before" style='width:{{ item.score }}%'>★★★★★</view>
+  </view>
+</view>
+    <view class="loadmore loading" wx:if="{{ hasMore }}">正在加载...</view>
+    <view class="loadmore over" wx:else>你已经触碰到了我的底线！</view>

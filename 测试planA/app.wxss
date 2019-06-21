@@ -1,0 +1,141 @@
+/* 公共样式 */
+
+page {
+  background: #f1f1f1;
+}
+
+/*  功能封装1 ：设置背景颜色 分区之间的间隔 planA */
+
+/* page {
+background: #f1f1f1
+} */
+
+.bgw {
+  background: #fff;
+}
+
+.mt20 {
+  margin-top: 20rpx;
+}
+
+/* 功能封装2 ：创建盒子作为 分区之间的间隔 divider */
+
+.divider {
+  height: 20rpx;
+  background: #f1f1f1;
+  box-shadow: 0 3rpx 5rpx rgba(0, 0, 0, 0.5) inset;
+}
+
+/* 功能封装3 ：细线边框 */
+
+.bdr {
+  position: relative;
+}
+
+.bdr::after {
+  content: "";
+  width: 1rpx;
+  height: 100%;
+  background: #ccc;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* 功能封装4 ：箭头 arrow */
+
+.arrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow::after {
+  content: "";
+  width: 16rpx;
+  height: 16rpx;
+  border-top: 3rpx solid #ccc;
+  border-right: 3rpx solid #ccc;
+  transform: rotate(45deg);
+  margin-right: 5rpx;
+}
+
+/* 功能封装6 ：水平垂直居中 */
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 功能封装7 ：列表格式 */
+
+.cell {
+  font-size: 16px;
+  background: #fff;
+  margin-bottom: 20rpx;
+  box-shadow: 0 3rpx 5rpx rgba(0, 0, 0, 0.3);
+}
+
+.cell-item {
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+
+/* 功能封装8 ：星星评分  */
+
+.shop-star {
+  position: absolute;
+  color: #e2e2e2;
+  font-size: 25px;
+  right: 20rpx;
+  top: 20rpx;
+}
+
+.star-before {
+  color: #efa350;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+/* 功能封装8 ：限制文本长度  */
+
+.ell {
+  width: 360rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+ /* 功能封装8 ：正在加载... */
+        .loadmore {
+          color: #888;
+          font-size: 16px;
+          line-height: 100rpx;
+          text-align: center;
+        }
+
+        .loadmore.loading::before {
+          content: '';
+          width: 40rpx;
+          height: 40rpx;
+          margin-top: -10rpx;
+          margin-right: 10rpx;
+          display: inline-block;
+          vertical-align: middle;
+          animation: loading 1s steps(12) infinite;
+          background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=) no-repeat;
+          background-size: 100%;
+        }
+
+        @keyframes loading {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(-360deg);
+          }
+        }
